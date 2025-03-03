@@ -1,0 +1,11 @@
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.deps.json
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.dll
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfoInputs.cache
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfo.cs
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.dll
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\refint\RepositoryLayer.dll
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\patha\source\repos\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll
