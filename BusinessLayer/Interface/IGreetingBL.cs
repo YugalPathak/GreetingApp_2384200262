@@ -1,12 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Interface
 {
-    interface IGreetingBL
+    /// <summary>
+    /// Greeting Business Logic Layer Interface.
+    /// Contains Abstract Methods of Greeting Application Business Layer. 
+    /// </summary>
+    public interface IGreetingBL
     {
+        /// <summary>
+        /// Get a greeting message.
+        /// </summary>
+        /// <returns>A greeting message string.</returns>
+        string GetGreetMessage();
     }
 }

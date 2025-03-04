@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/HelloGreeting/get": {
+    "/HelloGreeting": {
       "get": {
         "tags": [
           "HelloGreeting"
@@ -17,7 +17,19 @@
         }
       }
     },
-    "/HelloGreeting/post": {
+    "/HelloGreeting/get-greeting": {
+      "get": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/HelloGreeting/post-greeting": {
       "post": {
         "tags": [
           "HelloGreeting"
@@ -48,7 +60,7 @@
         }
       }
     },
-    "/HelloGreeting/put": {
+    "/HelloGreeting/update-greeting": {
       "put": {
         "tags": [
           "HelloGreeting"
@@ -79,7 +91,7 @@
         }
       }
     },
-    "/HelloGreeting/patch": {
+    "/HelloGreeting/modify-greeting": {
       "patch": {
         "tags": [
           "HelloGreeting"
@@ -110,7 +122,7 @@
         }
       }
     },
-    "/HelloGreeting/delete": {
+    "/HelloGreeting/delete-greeting": {
       "delete": {
         "tags": [
           "HelloGreeting"
