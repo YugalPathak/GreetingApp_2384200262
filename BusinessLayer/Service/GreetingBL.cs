@@ -12,9 +12,26 @@ namespace BusinessLayer.Service
         /// Returns a greeting message string.
         /// </summary>
         /// <returns>String containing "Hello, World!".</returns>
-        public string GetGreetMessage()
+        public string GetGreetMessage(string? firstName, string? lastName)
         {
-            return "Hello, World!";
+            if(firstName!=null && lastName!=null)
+            {
+                return $"{firstName}  {lastName}";
+            }
+            else if(firstName!=null)
+            {
+                return $"{firstName}";
+
+            }
+            else if (lastName != null)
+            {
+                return $"{lastName}";
+
+            }
+            else
+            {
+                return "Hello, World!";
+            }
         }
     }
 }

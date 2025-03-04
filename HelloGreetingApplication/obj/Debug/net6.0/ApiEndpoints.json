@@ -1,18 +1,8 @@
 [
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
-    "Method": "GetGreetMessage",
-    "RelativePath": "HelloGreeting",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Delete",
-    "RelativePath": "HelloGreeting/delete-greeting",
+    "RelativePath": "HelloGreeting/DELETE",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -28,7 +18,7 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Get",
-    "RelativePath": "HelloGreeting/get-greeting",
+    "RelativePath": "HelloGreeting/GET",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -37,8 +27,29 @@
   },
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "GetPersonalGreet",
+    "RelativePath": "HelloGreeting/GetPersonalGreet",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "firstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "lastName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Patch",
-    "RelativePath": "HelloGreeting/modify-greeting",
+    "RelativePath": "HelloGreeting/PATCH",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -54,7 +65,7 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Post",
-    "RelativePath": "HelloGreeting/post-greeting",
+    "RelativePath": "HelloGreeting/POST",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -70,7 +81,7 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "Put",
-    "RelativePath": "HelloGreeting/update-greeting",
+    "RelativePath": "HelloGreeting/PUT",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

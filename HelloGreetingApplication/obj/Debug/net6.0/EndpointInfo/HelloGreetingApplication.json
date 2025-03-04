@@ -5,7 +5,35 @@
     "version": "1.0"
   },
   "paths": {
-    "/HelloGreeting": {
+    "/HelloGreeting/GetPersonalGreet": {
+      "get": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "parameters": [
+          {
+            "name": "firstName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/HelloGreeting/GET": {
       "get": {
         "tags": [
           "HelloGreeting"
@@ -17,19 +45,7 @@
         }
       }
     },
-    "/HelloGreeting/get-greeting": {
-      "get": {
-        "tags": [
-          "HelloGreeting"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/HelloGreeting/post-greeting": {
+    "/HelloGreeting/POST": {
       "post": {
         "tags": [
           "HelloGreeting"
@@ -60,7 +76,7 @@
         }
       }
     },
-    "/HelloGreeting/update-greeting": {
+    "/HelloGreeting/PUT": {
       "put": {
         "tags": [
           "HelloGreeting"
@@ -91,7 +107,7 @@
         }
       }
     },
-    "/HelloGreeting/modify-greeting": {
+    "/HelloGreeting/PATCH": {
       "patch": {
         "tags": [
           "HelloGreeting"
@@ -122,7 +138,7 @@
         }
       }
     },
-    "/HelloGreeting/delete-greeting": {
+    "/HelloGreeting/DELETE": {
       "delete": {
         "tags": [
           "HelloGreeting"
