@@ -59,5 +59,21 @@ namespace RepositoryLayer.Service
                 throw new Exception("Error", ex);
             }
         }
+
+        /// <summary>
+        /// get all greeting messages from the database.
+        /// </summary>
+        /// <returns>List of all messages.</returns>
+        public List<HelloGreetingEntity> GetMessages()
+        {
+            try
+            {
+                return _context.Greetings.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error", ex);
+            }
+        }
     }
 }

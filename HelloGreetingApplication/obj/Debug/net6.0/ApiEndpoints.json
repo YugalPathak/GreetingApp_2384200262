@@ -43,6 +43,16 @@
   },
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "GetAllMessage",
+    "RelativePath": "HelloGreeting/GetMessages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "GetPersonalGreet",
     "RelativePath": "HelloGreeting/GetPersonalGreet",
     "HttpMethod": "GET",

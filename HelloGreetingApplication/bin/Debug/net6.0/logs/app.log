@@ -401,3 +401,23 @@ LIMIT 1
 2025-03-05 15:15:46.1735 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication) in 181.6836ms
 2025-03-05 15:15:46.1735 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
 2025-03-05 15:15:46.1735 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/?id=1 - - - 200 - application/json;+charset=utf-8 183.8268ms
+2025-03-05 15:32:48.5212 INFO Now listening on: https://localhost:7264
+2025-03-05 15:32:48.5924 INFO Now listening on: http://localhost:5147
+2025-03-05 15:32:48.9469 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 15:32:48.9478 INFO Hosting environment: Development
+2025-03-05 15:32:48.9478 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 15:32:50.3988 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 15:32:50.9159 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 521.9890ms
+2025-03-05 15:32:59.1840 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting/GetMessages - -
+2025-03-05 15:32:59.2078 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetAllMessage (HelloGreetingApplication)'
+2025-03-05 15:32:59.2375 INFO Route matched with {action = "GetAllMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMessage() on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:33:00.9374 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 15:33:01.7894 INFO Executed DbCommand (69ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+2025-03-05 15:33:01.9353 INFO Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[RepositoryLayer.Entity.HelloGreetingEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 15:33:01.9722 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.GetAllMessage (HelloGreetingApplication) in 2727.9474ms
+2025-03-05 15:33:01.9722 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.GetAllMessage (HelloGreetingApplication)'
+2025-03-05 15:33:01.9899 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting/GetMessages - - - 200 - application/json;+charset=utf-8 2805.8816ms
+2025-03-05 15:33:02.0462 INFO Request starting HTTP/2 GET https://localhost:7264/favicon.ico - -
+2025-03-05 15:33:02.0462 INFO Request finished HTTP/2 GET https://localhost:7264/favicon.ico - - - 404 0 - 1.2521ms

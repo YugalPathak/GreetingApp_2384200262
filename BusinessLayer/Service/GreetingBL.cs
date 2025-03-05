@@ -53,5 +53,10 @@ namespace BusinessLayer.Service
         {
             return _greetingRL.GetMessageById(id);
         }
+
+        public List<HelloGreetingEntity> GetMessages()
+        {
+            return _greetingRL.GetMessages();
+        }
     }
 }

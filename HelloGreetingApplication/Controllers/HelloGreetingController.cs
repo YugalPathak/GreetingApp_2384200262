@@ -100,6 +100,31 @@ namespace HelloGreetingApplication.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves all the messages from the database
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetMessages")]
+        public IActionResult GetAllMessage()
+        {
+            try
+            {
+                var text = _greetingBL.GetMessages();
+                if (text == null || text.Count == 0)
+                {
+                    return NotFound(new { Success = false, Message = "No Message found" });
+                }
+
+                return Ok(new { Success = true, Message = "Message retrieved successfully", Data = text });
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Error retrieving all greetings");
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
+        }
+
 
         /// <summary>
         /// Get greeting message fron GET method
