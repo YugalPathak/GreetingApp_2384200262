@@ -13,5 +13,6 @@ namespace BusinessLayer.Interface
         /// </summary>
         /// <returns>A greeting message string.</returns>
         string GetGreetMessage(string? firstName , string? lastName);
+        void SaveGreeting(string message);
     }
 }

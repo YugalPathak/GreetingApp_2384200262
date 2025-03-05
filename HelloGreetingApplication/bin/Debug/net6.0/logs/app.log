@@ -158,3 +158,142 @@
 2025-03-04 11:10:34.0903 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.Post (HelloGreetingApplication) in 168.9818ms
 2025-03-04 11:10:34.0903 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.Post (HelloGreetingApplication)'
 2025-03-04 11:10:34.0903 INFO Request finished HTTP/2 POST https://localhost:7264/HelloGreeting/POST application/json 38 - 200 - application/json;+charset=utf-8 243.2015ms
+2025-03-05 11:48:30.6519 INFO Now listening on: https://localhost:7264
+2025-03-05 11:48:30.7133 INFO Now listening on: http://localhost:5147
+2025-03-05 11:48:30.7642 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 11:48:30.7642 INFO Hosting environment: Development
+2025-03-05 11:48:30.7642 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 11:48:40.6717 INFO Request starting HTTP/2 GET https://localhost:7264/swagger - -
+2025-03-05 11:48:41.1642 INFO Request finished HTTP/2 GET https://localhost:7264/swagger - - - 301 0 - 497.0391ms
+2025-03-05 11:48:41.1642 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.html - -
+2025-03-05 11:48:41.3856 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.html - - - 200 - text/html;charset=utf-8 217.5527ms
+2025-03-05 11:48:41.4033 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - -
+2025-03-05 11:48:41.4033 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.css - -
+2025-03-05 11:48:41.4033 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - -
+2025-03-05 11:48:41.4033 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.js - -
+2025-03-05 11:48:41.4033 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - -
+2025-03-05 11:48:41.4033 INFO Request starting HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - -
+2025-03-05 11:48:41.4033 INFO Request starting HTTP/2 GET https://localhost:7264/_vs/browserLink - -
+2025-03-05 11:48:41.4033 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.9695ms
+2025-03-05 11:48:41.4183 INFO Request finished HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 12.4957ms
+2025-03-05 11:48:41.4390 INFO Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-05 11:48:41.4573 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.css - - - 200 202 text/css 53.5107ms
+2025-03-05 11:48:41.4573 INFO Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-05 11:48:41.4573 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - - - 200 154948 text/css 58.0439ms
+2025-03-05 11:48:41.4859 INFO Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-05 11:48:41.5032 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 97.6081ms
+2025-03-05 11:48:41.5468 INFO Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-05 11:48:41.5468 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 142.7718ms
+2025-03-05 11:48:42.5508 INFO Request finished HTTP/2 GET https://localhost:7264/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1144.4201ms
+2025-03-05 11:48:42.6510 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - -
+2025-03-05 11:48:42.6665 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.5870ms
+2025-03-05 11:48:42.6961 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/favicon-32x32.png - -
+2025-03-05 11:48:42.6989 INFO Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-03-05 11:48:42.6989 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/favicon-32x32.png - - - 200 628 image/png 4.2757ms
+2025-03-05 11:49:04.3197 INFO Request starting HTTP/2 POST https://localhost:7264/HelloGreeting/SAVE application/json 42
+2025-03-05 11:49:04.3342 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.SaveGreetingMessage (HelloGreetingApplication)'
+2025-03-05 11:49:04.3854 INFO Route matched with {action = "SaveGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SaveGreetingMessage(RepositoryLayer.Entity.HelloGreetingEntity) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 11:49:07.5772 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None
+2025-03-05 11:49:26.4197 ERROR An error occurred using the connection to database 'HelloGreetingAPI' on server 'YUGAL'.
+2025-03-05 11:49:26.7189 ERROR An exception occurred in the database while saving changes for context type 'RepositoryLayer.Context.HelloGreetingContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2025-03-05 11:49:26.9689 ERROR Error saving greeting
+2025-03-05 11:49:26.9689 INFO Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 11:49:26.9952 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.SaveGreetingMessage (HelloGreetingApplication) in 22600.0703ms
+2025-03-05 11:49:26.9952 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.SaveGreetingMessage (HelloGreetingApplication)'
+2025-03-05 11:49:27.0319 INFO Request finished HTTP/2 POST https://localhost:7264/HelloGreeting/SAVE application/json 42 - 500 - application/json;+charset=utf-8 22712.1794ms
+2025-03-05 11:52:00.9654 ERROR An Error Occured.
+2025-03-05 11:52:25.7619 ERROR An Error Occured.
+2025-03-05 12:15:53.2206 ERROR An Error Occured.
+2025-03-05 12:19:01.5470 ERROR An Error Occured.
+2025-03-05 12:28:39.7640 ERROR An Error Occured.
+2025-03-05 12:33:48.7497 ERROR An Error Occured.
+2025-03-05 12:43:15.6594 ERROR An Error Occured.
+2025-03-05 12:43:34.5270 ERROR An Error Occured.
+2025-03-05 12:44:13.9428 ERROR An Error Occured.
+2025-03-05 12:46:59.9165 ERROR An Error Occured.
+2025-03-05 12:48:08.6052 ERROR An Error Occured.
+2025-03-05 12:48:37.0410 ERROR An Error Occured.
+2025-03-05 12:50:04.9423 ERROR An Error Occured.
+2025-03-05 12:50:22.3840 ERROR An Error Occured.
+2025-03-05 14:36:40.4831 INFO Now listening on: https://localhost:7264
+2025-03-05 14:36:40.5529 INFO Now listening on: http://localhost:5147
+2025-03-05 14:36:40.8556 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 14:36:40.8556 INFO Hosting environment: Development
+2025-03-05 14:36:40.8556 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 14:36:42.2013 INFO Request starting HTTP/2 GET https://localhost:7264/swagger - -
+2025-03-05 14:36:42.9567 INFO Request finished HTTP/2 GET https://localhost:7264/swagger - - - 301 0 - 762.5707ms
+2025-03-05 14:36:43.1977 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.html - -
+2025-03-05 14:36:43.4365 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.html - - - 200 - text/html;charset=utf-8 238.7037ms
+2025-03-05 14:36:43.4897 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - -
+2025-03-05 14:36:43.5019 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.css - -
+2025-03-05 14:36:43.5019 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - -
+2025-03-05 14:36:43.5176 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - -
+2025-03-05 14:36:43.5615 INFO Request starting HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - -
+2025-03-05 14:36:43.5615 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.js - -
+2025-03-05 14:36:43.5615 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.js - - - 200 - application/javascript;charset=utf-8 1.9429ms
+2025-03-05 14:36:43.5776 INFO Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-05 14:36:43.6535 INFO Request finished HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 92.2666ms
+2025-03-05 14:36:43.6535 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.css - - - 200 202 text/css 154.2191ms
+2025-03-05 14:36:43.6710 INFO Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-05 14:36:43.6710 INFO Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-05 14:36:43.6710 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - - - 200 154948 text/css 189.2363ms
+2025-03-05 14:36:43.6710 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 161.3118ms
+2025-03-05 14:36:43.6842 INFO Request starting HTTP/2 GET https://localhost:7264/_vs/browserLink - -
+2025-03-05 14:36:43.7182 INFO Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-05 14:36:43.7182 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 216.6034ms
+2025-03-05 14:36:43.8242 INFO Request finished HTTP/2 GET https://localhost:7264/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 140.1196ms
+2025-03-05 14:36:44.0987 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - -
+2025-03-05 14:36:44.1067 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 7.9458ms
+2025-03-05 14:36:44.1829 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/favicon-32x32.png - -
+2025-03-05 14:36:44.1829 INFO Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-03-05 14:36:44.1829 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/favicon-32x32.png - - - 200 628 image/png 1.7237ms
+2025-03-05 14:38:33.4427 INFO Now listening on: https://localhost:7264
+2025-03-05 14:38:33.5096 INFO Now listening on: http://localhost:5147
+2025-03-05 14:38:33.8335 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 14:38:33.8335 INFO Hosting environment: Development
+2025-03-05 14:38:33.8335 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 14:38:35.5846 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 14:38:35.9401 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 361.7929ms
+2025-03-05 14:40:15.5755 INFO Request starting HTTP/1.1 POST https://localhost:7264/helloGreeting/SAVE application/json 54
+2025-03-05 14:40:15.5755 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.SaveGreetingMessage (HelloGreetingApplication)'
+2025-03-05 14:40:15.6390 INFO Route matched with {action = "SaveGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SaveGreetingMessage(RepositoryLayer.Entity.HelloGreetingEntity) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 14:40:17.4503 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 14:40:18.4566 INFO Executed DbCommand (92ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `Greetings` (`message`)
+VALUES (@p0);
+SELECT `id`
+FROM `Greetings`
+WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
+2025-03-05 14:40:18.5881 INFO Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 14:40:18.6152 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.SaveGreetingMessage (HelloGreetingApplication) in 2965.9962ms
+2025-03-05 14:40:18.6152 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.SaveGreetingMessage (HelloGreetingApplication)'
+2025-03-05 14:40:18.6331 INFO Request finished HTTP/1.1 POST https://localhost:7264/helloGreeting/SAVE application/json 54 - 200 - application/json;+charset=utf-8 3057.6621ms

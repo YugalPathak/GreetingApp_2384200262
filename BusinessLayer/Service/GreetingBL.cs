@@ -1,4 +1,6 @@
 ﻿using BusinessLayer.Interface;
+using RepositoryLayer.Entity;
+using RepositoryLayer.Interface;
 using System;
 
 namespace BusinessLayer.Service
@@ -8,7 +10,14 @@ namespace BusinessLayer.Service
     /// </summary>
     public class GreetingBL : IGreetingBL
     {
-        /// <summary>
+        private readonly IGreetingRL _greetingRL;
+
+        public GreetingBL(IGreetingRL greetingRL)
+        {
+            _greetingRL = greetingRL;
+        }
+
+         /// <summary>
         /// Returns a greeting message string.
         /// </summary>
         /// <returns>String containing "Hello, World!".</returns>
@@ -32,6 +41,12 @@ namespace BusinessLayer.Service
             {
                 return "Hello, World!";
             }
+        }
+
+        public void SaveGreeting(string message)
+        {
+            var greeting = new HelloGreetingEntity { message = message };
+            _greetingRL.SaveGreeting(greeting);
         }
     }
 }

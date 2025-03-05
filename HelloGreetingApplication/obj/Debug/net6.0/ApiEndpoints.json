@@ -93,5 +93,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "SaveGreetingMessage",
+    "RelativePath": "HelloGreeting/SAVE",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "helloEntity",
+        "Type": "RepositoryLayer.Entity.HelloGreetingEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

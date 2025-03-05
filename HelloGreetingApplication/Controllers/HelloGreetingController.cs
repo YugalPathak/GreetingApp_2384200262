@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
+using RepositoryLayer.Entity;
 
 namespace HelloGreetingApplication.Controllers
 {
@@ -13,6 +14,11 @@ namespace HelloGreetingApplication.Controllers
     public class HelloGreetingController : ControllerBase
     {
         private readonly IGreetingBL _greetingBL;
+
+        /// <summary>
+        /// Logs captured by logger instance
+        /// </summary>
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// Constructor to initialize the controller with Greeting Business Logic Layer.
@@ -48,9 +54,26 @@ namespace HelloGreetingApplication.Controllers
         }
 
         /// <summary>
-        /// Logs captured by logger instance
+        /// Post method to saved greeting method successfully
         /// </summary>
-        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        /// <param name="helloEntity"></param>
+        /// <returns>Saved Greeting Message</returns>
+        [HttpPost]
+        [Route("SAVE")]
+        public IActionResult SaveGreetingMessage(HelloGreetingEntity helloEntity)
+        {
+            try
+            {
+                _greetingBL.SaveGreeting(helloEntity.message);
+                return Ok(new { Success = true, Message = "Saved Successfully" });
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Error saving greeting");
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
+        }
+
 
         /// <summary>
         /// Get greeting message fron GET method
