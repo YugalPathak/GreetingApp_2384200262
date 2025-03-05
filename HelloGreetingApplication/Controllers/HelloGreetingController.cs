@@ -152,6 +152,32 @@ namespace HelloGreetingApplication.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes the message from the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>True or false</returns>
+        [HttpDelete]
+        [Route("DeleteMessage")]
+        public IActionResult DeleteMessageById(int id)
+        {
+            try
+            {
+                var isDeleted = _greetingBL.DeleteMessage(id);
+                if (!isDeleted)
+                {
+                    return NotFound(new { Success = false, Message = "Message not found" });
+                }
+
+                return Ok(new { Success = true, Message = "Message deleted successfully" });
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Error");
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
+        }
+
 
         /// <summary>
         /// Get greeting message fron GET method

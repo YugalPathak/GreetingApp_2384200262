@@ -101,5 +101,30 @@ namespace RepositoryLayer.Service
                 throw new Exception("Error", ex);
             }
         }
+
+        /// <summary>
+        /// Deletes the message from the database.
+        /// </summary>
+        /// <param name="id">.</param>
+        /// <returns>True if deleted successfully</returns>
+        public bool DeleteMessage(int id)
+        {
+            try
+            {
+                var text = _context.Greetings.FirstOrDefault(g => g.id == id);
+                if (text == null)
+                {
+                    return false; 
+                }
+
+                _context.Greetings.Remove(text);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error", ex);
+            }
+        }
     }
 }

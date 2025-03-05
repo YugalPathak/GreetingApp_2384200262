@@ -13,5 +13,6 @@ namespace RepositoryLayer.Interface
         HelloGreetingEntity GetMessageById(int id);
         List<HelloGreetingEntity> GetMessages();
         bool UpdateMessage(int id, string updatedMessage);
+        bool DeleteMessage(int id);
     }
 }

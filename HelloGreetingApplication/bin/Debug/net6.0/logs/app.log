@@ -722,3 +722,49 @@ LIMIT 1
 2025-03-05 16:15:51.9518 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 53.3645ms
 2025-03-05 16:15:51.9653 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
 2025-03-05 16:15:51.9653 INFO Request finished HTTP/1.1 PUT https://localhost:7264/HelloGreeting/Change?id=1&updatedMessage=Yugal application/json 40 - 200 - application/json;+charset=utf-8 58.0023ms
+2025-03-05 16:35:23.9854 INFO Now listening on: https://localhost:7264
+2025-03-05 16:35:24.0593 INFO Now listening on: http://localhost:5147
+2025-03-05 16:35:24.3255 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 16:35:24.3255 INFO Hosting environment: Development
+2025-03-05 16:35:24.3255 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 16:35:26.2858 INFO Request starting HTTP/2 GET https://localhost:7264/swagger - -
+2025-03-05 16:35:26.8071 INFO Request finished HTTP/2 GET https://localhost:7264/swagger - - - 301 0 - 526.8316ms
+2025-03-05 16:35:26.8538 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.html - -
+2025-03-05 16:35:27.1193 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.html - - - 200 - text/html;charset=utf-8 265.4842ms
+2025-03-05 16:35:27.1573 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - -
+2025-03-05 16:35:27.1573 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.css - -
+2025-03-05 16:35:27.1573 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - -
+2025-03-05 16:35:27.1573 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - -
+2025-03-05 16:35:27.1573 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.js - -
+2025-03-05 16:35:27.2132 INFO Request starting HTTP/2 GET https://localhost:7264/_vs/browserLink - -
+2025-03-05 16:35:27.2132 INFO Request starting HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - -
+2025-03-05 16:35:27.2298 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.js - - - 200 - application/javascript;charset=utf-8 70.7219ms
+2025-03-05 16:35:27.2605 INFO Request finished HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 44.6807ms
+2025-03-05 16:35:27.2605 INFO Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-05 16:35:27.3174 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.css - - - 200 202 text/css 159.2322ms
+2025-03-05 16:35:27.3174 INFO Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-05 16:35:27.3174 INFO Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-05 16:35:27.3394 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 181.2795ms
+2025-03-05 16:35:27.3394 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - - - 200 154948 text/css 182.1520ms
+2025-03-05 16:35:27.4243 INFO Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-05 16:35:27.4243 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 266.8234ms
+2025-03-05 16:35:27.4510 INFO Request finished HTTP/2 GET https://localhost:7264/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 237.7854ms
+2025-03-05 16:35:27.7125 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - -
+2025-03-05 16:35:27.7228 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.2889ms
+2025-03-05 16:35:37.4668 INFO Request starting HTTP/2 DELETE https://localhost:7264/HelloGreeting/delete-greeting-by-id?id=1 - -
+2025-03-05 16:35:37.4668 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.DeleteMessageById (HelloGreetingApplication)'
+2025-03-05 16:35:37.5466 INFO Route matched with {action = "DeleteMessageById", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteMessageById(Int32) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:35:39.3357 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 16:35:40.5464 INFO Executed DbCommand (111ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+WHERE `g`.`id` = @__id_0
+LIMIT 1
+2025-03-05 16:35:40.8644 INFO Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+DELETE FROM `Greetings`
+WHERE `id` = @p0;
+SELECT ROW_COUNT();
+2025-03-05 16:35:40.9061 INFO Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 16:35:40.9249 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.DeleteMessageById (HelloGreetingApplication) in 3371.6792ms
+2025-03-05 16:35:40.9249 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.DeleteMessageById (HelloGreetingApplication)'
+2025-03-05 16:35:40.9249 INFO Request finished HTTP/2 DELETE https://localhost:7264/HelloGreeting/delete-greeting-by-id?id=1 - - - 200 - application/json;+charset=utf-8 3470.6835ms
