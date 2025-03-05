@@ -125,6 +125,33 @@ namespace HelloGreetingApplication.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing message in the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="newMessage"></param>
+        /// <returns>True or False</returns>
+        [HttpPut]
+        [Route("Change")]
+        public IActionResult UpdateGreetingMessage(int id, string updatedMessage)
+        {
+            try
+            {
+                var isUpdated = _greetingBL.UpdateMessage(id, updatedMessage);
+                if (!isUpdated)
+                {
+                    return NotFound(new { Success = false, Message = "Message not found" });
+                }
+
+                return Ok(new { Success = true, Message = "Message updated successfully" });
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Error");
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
+        }
+
 
         /// <summary>
         /// Get greeting message fron GET method

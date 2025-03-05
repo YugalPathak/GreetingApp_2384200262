@@ -75,5 +75,31 @@ namespace RepositoryLayer.Service
                 throw new Exception("Error", ex);
             }
         }
+
+        /// <summary>
+        /// Updates the message in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="newMessage">.</param>
+        /// <returns>True if updated successfully</returns>
+        public bool UpdateMessage(int id, string updatedMessage)
+        {
+            try
+            {
+                var text = _context.Greetings.FirstOrDefault(g => g.id == id);
+                if (text == null)
+                {
+                    return false; 
+                }
+
+                text.message = updatedMessage;
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error", ex);
+            }
+        }
     }
 }

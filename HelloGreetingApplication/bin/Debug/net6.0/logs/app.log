@@ -421,3 +421,304 @@ FROM `Greetings` AS `g`
 2025-03-05 15:33:01.9899 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting/GetMessages - - - 200 - application/json;+charset=utf-8 2805.8816ms
 2025-03-05 15:33:02.0462 INFO Request starting HTTP/2 GET https://localhost:7264/favicon.ico - -
 2025-03-05 15:33:02.0462 INFO Request finished HTTP/2 GET https://localhost:7264/favicon.ico - - - 404 0 - 1.2521ms
+2025-03-05 15:49:37.1337 INFO Now listening on: https://localhost:7264
+2025-03-05 15:49:37.1979 INFO Now listening on: http://localhost:5147
+2025-03-05 15:49:37.4665 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 15:49:37.4665 INFO Hosting environment: Development
+2025-03-05 15:49:37.4665 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 15:49:39.2223 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 15:49:39.8053 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 589.9598ms
+2025-03-05 15:49:48.3041 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting/UpdateMessage - -
+2025-03-05 15:49:48.3215 INFO Executing endpoint '405 HTTP Method Not Supported'
+2025-03-05 15:49:48.3215 INFO Executed endpoint '405 HTTP Method Not Supported'
+2025-03-05 15:49:48.3215 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting/UpdateMessage - - - 405 0 - 18.8225ms
+2025-03-05 15:50:16.5369 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage - 0
+2025-03-05 15:50:16.5369 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:50:16.5863 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:50:17.1476 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:50:17.1837 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 590.2476ms
+2025-03-05 15:50:17.1837 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:50:17.1903 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage - 0 - 400 - application/problem+json;+charset=utf-8 653.4175ms
+2025-03-05 15:51:06.4002 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 68
+2025-03-05 15:51:06.4002 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:51:06.4002 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:51:06.4296 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:51:06.4296 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 26.1921ms
+2025-03-05 15:51:06.4296 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:51:06.4296 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 68 - 400 - application/problem+json;+charset=utf-8 32.7466ms
+2025-03-05 15:51:15.0657 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 61
+2025-03-05 15:51:15.0657 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:51:15.0657 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:51:15.0752 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:51:15.0752 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 7.2152ms
+2025-03-05 15:51:15.0752 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:51:15.0752 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 61 - 400 - application/problem+json;+charset=utf-8 11.3907ms
+2025-03-05 15:51:49.8465 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 61
+2025-03-05 15:51:49.8559 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:51:49.8559 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:51:49.8559 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:51:49.8559 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 2.1592ms
+2025-03-05 15:51:49.8559 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:51:49.8559 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 61 - 400 - application/problem+json;+charset=utf-8 19.6237ms
+2025-03-05 15:52:29.5599 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 61
+2025-03-05 15:52:29.5673 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:52:29.5673 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:52:29.5673 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:52:29.5673 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 1.1395ms
+2025-03-05 15:52:29.5673 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:52:29.5673 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 61 - 400 - application/problem+json;+charset=utf-8 13.6836ms
+2025-03-05 15:53:02.0316 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 44
+2025-03-05 15:53:02.0316 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:53:02.0316 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:53:02.0316 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:53:02.0316 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 0.6016ms
+2025-03-05 15:53:02.0316 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:53:02.0316 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 44 - 400 - application/problem+json;+charset=utf-8 7.7615ms
+2025-03-05 15:53:21.4055 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 61
+2025-03-05 15:53:21.4055 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:53:21.4055 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:53:21.4055 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:53:21.4055 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 1.3739ms
+2025-03-05 15:53:21.4055 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:53:21.4055 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 61 - 400 - application/problem+json;+charset=utf-8 3.7744ms
+2025-03-05 15:53:33.8671 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 68
+2025-03-05 15:53:33.8671 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:53:33.8671 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:53:33.8671 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:53:33.8671 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 1.624ms
+2025-03-05 15:53:33.8671 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:53:33.8671 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/UpdateMessage application/json 68 - 400 - application/problem+json;+charset=utf-8 4.5674ms
+2025-03-05 15:54:16.6832 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68
+2025-03-05 15:54:16.6921 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68 - 404 0 - 8.9615ms
+2025-03-05 15:54:40.8738 INFO Now listening on: https://localhost:7264
+2025-03-05 15:54:40.9246 INFO Now listening on: http://localhost:5147
+2025-03-05 15:54:41.1779 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 15:54:41.1779 INFO Hosting environment: Development
+2025-03-05 15:54:41.1779 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 15:54:42.4189 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 15:54:42.7358 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 320.7996ms
+2025-03-05 15:54:56.8632 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68
+2025-03-05 15:54:56.8769 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:54:56.9382 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:54:57.4859 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:54:57.5209 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 572.7538ms
+2025-03-05 15:54:57.5209 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:54:57.5404 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68 - 400 - application/problem+json;+charset=utf-8 677.1244ms
+2025-03-05 15:55:12.6789 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting/ChangeMessage - -
+2025-03-05 15:55:12.6980 INFO Executing endpoint '405 HTTP Method Not Supported'
+2025-03-05 15:55:12.6980 INFO Executed endpoint '405 HTTP Method Not Supported'
+2025-03-05 15:55:12.6980 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting/ChangeMessage - - - 405 0 - 21.6718ms
+2025-03-05 15:55:29.3882 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68
+2025-03-05 15:55:29.3882 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:55:29.3882 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:55:29.4100 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:55:29.4100 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 19.6485ms
+2025-03-05 15:55:29.4100 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:55:29.4100 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68 - 400 - application/problem+json;+charset=utf-8 23.2497ms
+2025-03-05 15:55:43.9849 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68
+2025-03-05 15:55:43.9849 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:55:43.9849 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:55:43.9849 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:55:43.9849 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 4.2281ms
+2025-03-05 15:55:43.9849 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:55:43.9849 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68 - 400 - application/problem+json;+charset=utf-8 5.8509ms
+2025-03-05 15:55:46.3267 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68
+2025-03-05 15:55:46.3267 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:55:46.3267 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:55:46.3267 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:55:46.3287 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 0.7464ms
+2025-03-05 15:55:46.3287 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:55:46.3287 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68 - 400 - application/problem+json;+charset=utf-8 2.9227ms
+2025-03-05 15:57:07.9741 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 51
+2025-03-05 15:57:07.9741 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:57:07.9741 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:57:07.9741 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:57:07.9741 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 1.5115ms
+2025-03-05 15:57:07.9741 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:57:07.9741 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 51 - 400 - application/problem+json;+charset=utf-8 3.8870ms
+2025-03-05 15:57:51.0397 INFO Now listening on: https://localhost:7264
+2025-03-05 15:57:51.1059 INFO Now listening on: http://localhost:5147
+2025-03-05 15:57:51.3380 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 15:57:51.3390 INFO Hosting environment: Development
+2025-03-05 15:57:51.3390 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 15:57:52.0109 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 15:57:52.2244 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 218.8365ms
+2025-03-05 15:58:52.2527 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 51
+2025-03-05 15:58:52.2527 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:58:52.3065 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:58:52.8918 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:58:52.9231 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 610.5264ms
+2025-03-05 15:58:52.9234 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:58:52.9234 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 51 - 400 - application/problem+json;+charset=utf-8 676.4444ms
+2025-03-05 15:59:08.7471 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68
+2025-03-05 15:59:08.7471 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:59:08.7471 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:59:08.7938 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:59:08.7950 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 27.0695ms
+2025-03-05 15:59:08.7950 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:59:08.7950 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage application/json 68 - 400 - application/problem+json;+charset=utf-8 48.8789ms
+2025-03-05 15:59:23.7916 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage/1 application/json 68
+2025-03-05 15:59:23.7916 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage/1 application/json 68 - 404 0 - 0.8353ms
+2025-03-05 15:59:32.0474 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage/1 application/json 51
+2025-03-05 15:59:32.0491 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage/1 application/json 51 - 404 0 - 1.6944ms
+2025-03-05 15:59:50.1422 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage/?id=1 application/json 51
+2025-03-05 15:59:50.1422 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:59:50.1422 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:59:50.1890 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 15:59:50.1890 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 44.3224ms
+2025-03-05 15:59:50.1890 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 15:59:50.1890 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage/?id=1 application/json 51 - 400 - application/problem+json;+charset=utf-8 49.8815ms
+2025-03-05 16:00:17.5446 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage/?id=1&?updatedMessage=%22Yugal%22 - 0
+2025-03-05 16:00:17.5446 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:00:17.5446 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:00:17.5446 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:00:17.5446 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 1.6857ms
+2025-03-05 16:00:17.5446 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:00:17.5446 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/ChangeMessage/?id=1&?updatedMessage=%22Yugal%22 - 0 - 400 - application/problem+json;+charset=utf-8 3.5976ms
+2025-03-05 16:03:37.3839 INFO Now listening on: https://localhost:7264
+2025-03-05 16:03:37.4279 INFO Now listening on: http://localhost:5147
+2025-03-05 16:03:37.6733 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 16:03:37.6733 INFO Hosting environment: Development
+2025-03-05 16:03:37.6733 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 16:03:38.5385 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 16:03:38.9161 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 382.5816ms
+2025-03-05 16:04:26.9614 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 68
+2025-03-05 16:04:26.9695 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:04:27.0116 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:04:27.5836 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:04:27.6216 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 600.7964ms
+2025-03-05 16:04:27.6216 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:04:27.6279 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 68 - 400 - application/problem+json;+charset=utf-8 666.4975ms
+2025-03-05 16:05:03.1352 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 68
+2025-03-05 16:05:03.1391 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:05:03.1391 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:05:03.1683 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:05:03.1683 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 28.7859ms
+2025-03-05 16:05:03.1683 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:05:03.1683 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 68 - 400 - application/problem+json;+charset=utf-8 34.1838ms
+2025-03-05 16:06:35.7060 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change/?id=1&?updatedMessage=%22Yugal%22 application/json 68
+2025-03-05 16:06:35.7060 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:06:35.7060 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:06:35.7280 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:06:35.7280 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 20.3957ms
+2025-03-05 16:06:35.7280 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:06:35.7280 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change/?id=1&?updatedMessage=%22Yugal%22 application/json 68 - 400 - application/problem+json;+charset=utf-8 23.0994ms
+2025-03-05 16:06:40.2963 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change/?id=1&?updatedMessage=%22Yugal%22 - 0
+2025-03-05 16:06:40.2963 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:06:40.2963 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:06:40.2963 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:06:40.2963 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 1.0165ms
+2025-03-05 16:06:40.2963 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:06:40.2963 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change/?id=1&?updatedMessage=%22Yugal%22 - 0 - 400 - application/problem+json;+charset=utf-8 3.0598ms
+2025-03-05 16:07:04.3519 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change - 0
+2025-03-05 16:07:04.3609 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:07:04.3609 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:07:04.3609 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:07:04.3609 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 1.0427ms
+2025-03-05 16:07:04.3609 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:07:04.3609 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change - 0 - 400 - application/problem+json;+charset=utf-8 13.4502ms
+2025-03-05 16:07:21.0511 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 36
+2025-03-05 16:07:21.0511 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:07:21.0511 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:07:21.0511 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:07:21.0511 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 0.8095ms
+2025-03-05 16:07:21.0511 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:07:21.0511 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 36 - 400 - application/problem+json;+charset=utf-8 2.7478ms
+2025-03-05 16:10:18.0427 INFO Now listening on: https://localhost:7264
+2025-03-05 16:10:18.1069 INFO Now listening on: http://localhost:5147
+2025-03-05 16:10:18.3575 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 16:10:18.3575 INFO Hosting environment: Development
+2025-03-05 16:10:18.3575 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 16:10:19.2447 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 16:10:19.5629 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 324.2542ms
+2025-03-05 16:10:51.0829 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 53
+2025-03-05 16:10:51.0829 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:10:51.1407 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:10:51.6836 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:10:51.7188 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 570.0398ms
+2025-03-05 16:10:51.7193 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:10:51.7193 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 53 - 400 - application/problem+json;+charset=utf-8 644.2606ms
+2025-03-05 16:12:23.9156 INFO Now listening on: https://localhost:7264
+2025-03-05 16:12:23.9664 INFO Now listening on: http://localhost:5147
+2025-03-05 16:12:24.1938 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 16:12:24.1938 INFO Hosting environment: Development
+2025-03-05 16:12:24.1938 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 16:12:25.6885 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 16:12:26.0141 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 331.7071ms
+2025-03-05 16:12:36.2644 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting/Change - -
+2025-03-05 16:12:36.2844 INFO Executing endpoint '405 HTTP Method Not Supported'
+2025-03-05 16:12:36.2844 INFO Executed endpoint '405 HTTP Method Not Supported'
+2025-03-05 16:12:36.2844 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting/Change - - - 405 0 - 22.3427ms
+2025-03-05 16:13:05.6520 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 53
+2025-03-05 16:13:05.6559 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:13:05.6992 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:13:07.0739 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:13:07.1153 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 1408.8373ms
+2025-03-05 16:13:07.1153 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:13:07.1153 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 53 - 400 - application/problem+json;+charset=utf-8 1468.9821ms
+2025-03-05 16:14:10.2614 INFO Request starting HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 40
+2025-03-05 16:14:10.2614 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:14:10.2614 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:14:10.2868 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-05 16:14:10.2868 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 22.4961ms
+2025-03-05 16:14:10.2868 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:14:10.2868 INFO Request finished HTTP/1.1 PUT https://localhost:7264/helloGreeting/Change application/json 40 - 400 - application/problem+json;+charset=utf-8 26.6578ms
+2025-03-05 16:14:58.3106 INFO Now listening on: https://localhost:7264
+2025-03-05 16:14:58.3786 INFO Now listening on: http://localhost:5147
+2025-03-05 16:14:58.6336 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 16:14:58.6336 INFO Hosting environment: Development
+2025-03-05 16:14:58.6336 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 16:14:59.8233 INFO Request starting HTTP/2 GET https://localhost:7264/swagger - -
+2025-03-05 16:15:00.2064 INFO Request finished HTTP/2 GET https://localhost:7264/swagger - - - 301 0 - 388.0053ms
+2025-03-05 16:15:00.2235 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.html - -
+2025-03-05 16:15:00.4264 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.html - - - 200 - text/html;charset=utf-8 202.8611ms
+2025-03-05 16:15:00.4402 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - -
+2025-03-05 16:15:00.4402 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.css - -
+2025-03-05 16:15:00.4402 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - -
+2025-03-05 16:15:00.4402 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - -
+2025-03-05 16:15:00.4402 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.js - -
+2025-03-05 16:15:00.4402 INFO Request starting HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - -
+2025-03-05 16:15:00.4402 INFO Request starting HTTP/2 GET https://localhost:7264/_vs/browserLink - -
+2025-03-05 16:15:00.4402 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.9207ms
+2025-03-05 16:15:00.4535 INFO Request finished HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 11.8970ms
+2025-03-05 16:15:00.4799 INFO Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-05 16:15:00.4965 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.css - - - 200 202 text/css 55.7169ms
+2025-03-05 16:15:00.5439 INFO Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-05 16:15:00.5439 INFO Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-05 16:15:00.5539 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 112.7826ms
+2025-03-05 16:15:00.5539 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - - - 200 154948 text/css 113.7031ms
+2025-03-05 16:15:00.5864 INFO Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-05 16:15:00.5864 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 146.5420ms
+2025-03-05 16:15:00.6198 INFO Request finished HTTP/2 GET https://localhost:7264/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 178.1214ms
+2025-03-05 16:15:00.7831 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - -
+2025-03-05 16:15:00.7831 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 8.0482ms
+2025-03-05 16:15:14.0660 INFO Request starting HTTP/2 PUT https://localhost:7264/HelloGreeting/Change?id=1&updatedMessage=Yugal - 0
+2025-03-05 16:15:14.0795 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:15:14.1204 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:15:15.7890 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 16:15:17.0654 INFO Executed DbCommand (105ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+WHERE `g`.`id` = @__id_0
+LIMIT 1
+2025-03-05 16:15:17.4367 INFO Executed DbCommand (22ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+UPDATE `Greetings` SET `message` = @p0
+WHERE `id` = @p1;
+SELECT ROW_COUNT();
+2025-03-05 16:15:17.4890 INFO Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 16:15:17.5126 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 3384.5146ms
+2025-03-05 16:15:17.5126 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:15:17.5310 INFO Request finished HTTP/2 PUT https://localhost:7264/HelloGreeting/Change?id=1&updatedMessage=Yugal - 0 - 200 - application/json;+charset=utf-8 3464.8143ms
+2025-03-05 16:15:51.9080 INFO Request starting HTTP/1.1 PUT https://localhost:7264/HelloGreeting/Change?id=1&updatedMessage=Yugal application/json 40
+2025-03-05 16:15:51.9080 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:15:51.9080 INFO Route matched with {action = "UpdateGreetingMessage", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreetingMessage(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 16:15:51.9518 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 16:15:51.9518 INFO Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+WHERE `g`.`id` = @__id_0
+LIMIT 1
+2025-03-05 16:15:51.9518 INFO Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 16:15:51.9518 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication) in 53.3645ms
+2025-03-05 16:15:51.9653 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.UpdateGreetingMessage (HelloGreetingApplication)'
+2025-03-05 16:15:51.9653 INFO Request finished HTTP/1.1 PUT https://localhost:7264/HelloGreeting/Change?id=1&updatedMessage=Yugal application/json 40 - 200 - application/json;+charset=utf-8 58.0023ms

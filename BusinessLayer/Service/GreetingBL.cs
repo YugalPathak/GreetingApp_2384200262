@@ -58,5 +58,10 @@ namespace BusinessLayer.Service
         {
             return _greetingRL.GetMessages();
         }
+
+        public bool UpdateMessage(int id, string updatedMessage)
+        {
+            return _greetingRL.UpdateMessage(id, updatedMessage);
+        }
     }
 }

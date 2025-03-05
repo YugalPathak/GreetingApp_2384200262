@@ -18,5 +18,6 @@ namespace BusinessLayer.Interface
         HelloGreetingEntity GetMessageById(int id);
 
         List<HelloGreetingEntity> GetMessages();
+        bool UpdateMessage(int id, string updatedMessage);
     }
 }
