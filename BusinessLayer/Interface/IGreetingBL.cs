@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RepositoryLayer.Entity;
+using System;
 
 namespace BusinessLayer.Interface
 {
@@ -14,5 +15,6 @@ namespace BusinessLayer.Interface
         /// <returns>A greeting message string.</returns>
         string GetGreetMessage(string? firstName , string? lastName);
         void SaveGreeting(string message);
+        HelloGreetingEntity GetMessageById(int id);
     }
 }

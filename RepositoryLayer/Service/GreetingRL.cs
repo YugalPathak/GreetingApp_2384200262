@@ -41,5 +41,23 @@ namespace RepositoryLayer.Service
                 throw new Exception("An error occurred while saving the greeting message", ex);
             }
         }
+
+        /// <summary>
+        /// Retrieving message by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>The greeting message</returns>
+        /// <exception cref="Exception"></exception>
+        public HelloGreetingEntity GetMessageById(int id)
+        {
+            try
+            {
+                return _context.Greetings.FirstOrDefault(g => g.id == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error", ex);
+            }
+        }
     }
 }

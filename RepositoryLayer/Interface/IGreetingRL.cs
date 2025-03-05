@@ -10,5 +10,6 @@ namespace RepositoryLayer.Interface
     public interface IGreetingRL
     {
         void SaveGreeting(HelloGreetingEntity helloGreetingEntity);
+        HelloGreetingEntity GetMessageById(int id);
     }
 }

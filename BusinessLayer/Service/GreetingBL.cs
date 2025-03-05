@@ -48,5 +48,10 @@ namespace BusinessLayer.Service
             var greeting = new HelloGreetingEntity { message = message };
             _greetingRL.SaveGreeting(greeting);
         }
+
+        public HelloGreetingEntity GetMessageById(int id)
+        {
+            return _greetingRL.GetMessageById(id);
+        }
     }
 }

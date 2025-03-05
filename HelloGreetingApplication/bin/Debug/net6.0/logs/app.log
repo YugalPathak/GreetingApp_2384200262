@@ -297,3 +297,107 @@ WHERE ROW_COUNT() = 1 AND `id` = LAST_INSERT_ID();
 2025-03-05 14:40:18.6152 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.SaveGreetingMessage (HelloGreetingApplication) in 2965.9962ms
 2025-03-05 14:40:18.6152 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.SaveGreetingMessage (HelloGreetingApplication)'
 2025-03-05 14:40:18.6331 INFO Request finished HTTP/1.1 POST https://localhost:7264/helloGreeting/SAVE application/json 54 - 200 - application/json;+charset=utf-8 3057.6621ms
+2025-03-05 15:04:50.6570 INFO Now listening on: https://localhost:7264
+2025-03-05 15:04:50.6934 INFO Now listening on: http://localhost:5147
+2025-03-05 15:04:50.8532 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 15:04:50.8532 INFO Hosting environment: Development
+2025-03-05 15:04:50.8532 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 15:04:52.0048 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 15:04:52.3794 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 384.2081ms
+2025-03-05 15:05:39.2836 INFO Request starting HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/1 application/json 54
+2025-03-05 15:05:39.3339 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/1 application/json 54 - 404 0 - 50.0957ms
+2025-03-05 15:05:54.2900 INFO Request starting HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID application/json 54
+2025-03-05 15:05:54.3003 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:05:54.3429 INFO Route matched with {action = "RetrievesById", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RetrievesById(Int32) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:05:56.1034 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 15:05:57.3731 INFO Executed DbCommand (104ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+WHERE `g`.`id` = @__id_0
+LIMIT 1
+2025-03-05 15:05:57.4463 INFO Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 15:05:57.4789 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication) in 3125.7668ms
+2025-03-05 15:05:57.4789 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:05:57.4942 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID application/json 54 - 404 - application/json;+charset=utf-8 3204.1800ms
+2025-03-05 15:06:07.7473 INFO Request starting HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID - -
+2025-03-05 15:06:07.7499 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:06:07.7499 INFO Route matched with {action = "RetrievesById", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RetrievesById(Int32) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:06:07.8321 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 15:06:07.8620 INFO Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+WHERE `g`.`id` = @__id_0
+LIMIT 1
+2025-03-05 15:06:07.8620 INFO Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 15:06:07.8620 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication) in 112.4712ms
+2025-03-05 15:06:07.8620 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:06:07.8620 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID - - - 404 - application/json;+charset=utf-8 117.2528ms
+2025-03-05 15:06:14.0209 INFO Request starting HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/1 - -
+2025-03-05 15:06:14.0209 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/1 - - - 404 0 - 1.5219ms
+2025-03-05 15:08:49.6406 INFO Request starting HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID - -
+2025-03-05 15:08:49.6406 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:08:49.6406 INFO Route matched with {action = "RetrievesById", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RetrievesById(Int32) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:08:49.7281 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 15:08:49.7356 INFO Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+WHERE `g`.`id` = @__id_0
+LIMIT 1
+2025-03-05 15:08:49.7356 INFO Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 15:08:49.7356 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication) in 95.026ms
+2025-03-05 15:08:49.7356 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:08:49.7356 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID - - - 404 - application/json;+charset=utf-8 96.7543ms
+2025-03-05 15:09:11.0656 INFO Request starting HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/1 - -
+2025-03-05 15:09:11.0656 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/1 - - - 404 0 - 0.7768ms
+2025-03-05 15:12:29.3242 INFO Now listening on: https://localhost:7264
+2025-03-05 15:12:29.4111 INFO Now listening on: http://localhost:5147
+2025-03-05 15:12:29.6196 INFO Application started. Press Ctrl+C to shut down.
+2025-03-05 15:12:29.6196 INFO Hosting environment: Development
+2025-03-05 15:12:29.6196 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-05 15:12:30.4107 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting - -
+2025-03-05 15:12:30.7396 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting - - - 404 0 - 333.9190ms
+2025-03-05 15:12:42.7656 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting/GetID - -
+2025-03-05 15:12:42.7892 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:12:42.8342 INFO Route matched with {action = "RetrievesById", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RetrievesById(Int32) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:12:44.6215 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 15:12:45.7900 INFO Executed DbCommand (102ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+WHERE `g`.`id` = @__id_0
+LIMIT 1
+2025-03-05 15:12:45.8592 INFO Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 15:12:45.8943 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication) in 3053.3225ms
+2025-03-05 15:12:45.8943 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:12:45.9140 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting/GetID - - - 404 - application/json;+charset=utf-8 3148.4564ms
+2025-03-05 15:12:45.9736 INFO Request starting HTTP/2 GET https://localhost:7264/favicon.ico - -
+2025-03-05 15:12:45.9736 INFO Request finished HTTP/2 GET https://localhost:7264/favicon.ico - - - 404 0 - 1.2819ms
+2025-03-05 15:12:52.5715 INFO Request starting HTTP/2 GET https://localhost:7264/helloGreeting/GetID/1 - -
+2025-03-05 15:12:52.5812 INFO Request finished HTTP/2 GET https://localhost:7264/helloGreeting/GetID/1 - - - 404 0 - 9.6355ms
+2025-03-05 15:13:17.1189 INFO Request starting HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID - -
+2025-03-05 15:13:17.1189 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:13:17.1189 INFO Route matched with {action = "RetrievesById", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RetrievesById(Int32) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:13:17.1348 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 15:13:17.2033 INFO Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+WHERE `g`.`id` = @__id_0
+LIMIT 1
+2025-03-05 15:13:17.2033 INFO Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-05 15:13:17.2096 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication) in 89.1085ms
+2025-03-05 15:13:17.2096 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:13:17.2096 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID - - - 404 - application/json;+charset=utf-8 91.5028ms
+2025-03-05 15:13:23.6837 INFO Request starting HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/1 - -
+2025-03-05 15:13:23.6837 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/1 - - - 404 0 - 0.9681ms
+2025-03-05 15:15:45.9904 INFO Request starting HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/?id=1 - -
+2025-03-05 15:15:45.9904 INFO Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:15:45.9904 INFO Route matched with {action = "RetrievesById", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RetrievesById(Int32) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication).
+2025-03-05 15:15:46.0713 INFO Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.3' with options: ServerVersion 8.0.41-mysql 
+2025-03-05 15:15:46.0764 INFO Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`message`
+FROM `Greetings` AS `g`
+WHERE `g`.`id` = @__id_0
+LIMIT 1
+2025-03-05 15:15:46.1690 INFO Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[RepositoryLayer.Entity.HelloGreetingEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-05 15:15:46.1735 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication) in 181.6836ms
+2025-03-05 15:15:46.1735 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.RetrievesById (HelloGreetingApplication)'
+2025-03-05 15:15:46.1735 INFO Request finished HTTP/1.1 GET https://localhost:7264/helloGreeting/GetID/?id=1 - - - 200 - application/json;+charset=utf-8 183.8268ms

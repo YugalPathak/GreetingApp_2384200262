@@ -74,6 +74,32 @@ namespace HelloGreetingApplication.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a greeting message by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>The greeting message</returns>
+        [HttpGet]
+        [Route("GetID")]
+        public IActionResult RetrievesById(int id)
+        {
+            try
+            {
+                var text = _greetingBL.GetMessageById(id);
+                if (text == null)
+                {
+                    return NotFound(new { Success = false, Message = "Message not found" });
+                }
+
+                return Ok(new { Success = true, Message = "Message retrieved successfully", Data = text });
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Error retrieving greeting message");
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
+        }
+
 
         /// <summary>
         /// Get greeting message fron GET method
