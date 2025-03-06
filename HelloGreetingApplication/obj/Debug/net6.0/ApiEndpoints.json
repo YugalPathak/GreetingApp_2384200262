@@ -39,7 +39,7 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "DeleteMessageById",
-    "RelativePath": "HelloGreeting/delete-greeting-by-id",
+    "RelativePath": "HelloGreeting/DeleteMessage",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

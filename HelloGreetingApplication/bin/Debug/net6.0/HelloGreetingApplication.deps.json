@@ -10,8 +10,10 @@
         "dependencies": {
           "BusinessLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.36",
+          "Middleware": "1.0.0",
           "MySql.EntityFrameworkCore": "6.0.33",
           "NLog": "5.4.0",
+          "NLog.Extensions.Logging": "5.4.0",
           "NLog.Web.AspNetCore": "5.4.0",
           "Swashbuckle.AspNetCore": "7.3.1"
         },
@@ -578,6 +580,18 @@
           }
         }
       },
+      "Middleware/1.0.0": {
+        "dependencies": {
+          "NLog": "5.4.0",
+          "NLog.Web.AspNetCore": "5.4.0"
+        },
+        "runtime": {
+          "Middleware.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "ModelLayer/1.0.0": {
         "dependencies": {
           "MySql.EntityFrameworkCore": "6.0.33"
@@ -1003,6 +1017,11 @@
       "hashPath": "zstdsharp.port.0.8.0.nupkg.sha512"
     },
     "BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Middleware/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -768,3 +768,32 @@ SELECT ROW_COUNT();
 2025-03-05 16:35:40.9249 INFO Executed action HelloGreetingApplication.Controllers.HelloGreetingController.DeleteMessageById (HelloGreetingApplication) in 3371.6792ms
 2025-03-05 16:35:40.9249 INFO Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.DeleteMessageById (HelloGreetingApplication)'
 2025-03-05 16:35:40.9249 INFO Request finished HTTP/2 DELETE https://localhost:7264/HelloGreeting/delete-greeting-by-id?id=1 - - - 200 - application/json;+charset=utf-8 3470.6835ms
+2025-03-06 11:54:06.1780 INFO Now listening on: https://localhost:7264
+2025-03-06 11:54:06.2492 INFO Now listening on: http://localhost:5147
+2025-03-06 11:54:06.5125 INFO Application started. Press Ctrl+C to shut down.
+2025-03-06 11:54:06.5203 INFO Hosting environment: Development
+2025-03-06 11:54:06.5203 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-06 11:54:08.3932 INFO Request starting HTTP/2 GET https://localhost:7264/swagger - -
+2025-03-06 11:54:08.8297 INFO Request finished HTTP/2 GET https://localhost:7264/swagger - - - 301 0 - 443.3182ms
+2025-03-06 11:54:08.8297 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.html - -
+2025-03-06 11:54:09.0550 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.html - - - 200 - text/html;charset=utf-8 222.3846ms
+2025-03-06 11:54:09.1595 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.css - -
+2025-03-06 11:54:09.1595 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - -
+2025-03-06 11:54:09.1595 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.js - -
+2025-03-06 11:54:09.1595 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - -
+2025-03-06 11:54:09.1595 INFO Request starting HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - -
+2025-03-06 11:54:09.1595 INFO Request starting HTTP/2 GET https://localhost:7264/_vs/browserLink - -
+2025-03-06 11:54:09.1595 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - -
+2025-03-06 11:54:09.1595 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.4749ms
+2025-03-06 11:54:09.1742 INFO Request finished HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 13.0993ms
+2025-03-06 11:54:09.1873 INFO Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-06 11:54:09.2340 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.css - - - 200 202 text/css 74.4607ms
+2025-03-06 11:54:09.2384 INFO Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-06 11:54:09.2384 INFO Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-06 11:54:09.2509 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - - - 200 154948 text/css 91.1794ms
+2025-03-06 11:54:09.2509 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 89.7240ms
+2025-03-06 11:54:09.2954 INFO Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-06 11:54:09.2954 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 135.3123ms
+2025-03-06 11:54:09.4028 INFO Request finished HTTP/2 GET https://localhost:7264/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 241.3650ms
+2025-03-06 11:54:09.5522 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - -
+2025-03-06 11:54:09.5522 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 9.5719ms

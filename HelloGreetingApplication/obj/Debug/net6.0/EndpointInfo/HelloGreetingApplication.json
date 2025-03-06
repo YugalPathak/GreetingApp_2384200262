@@ -127,7 +127,7 @@
         }
       }
     },
-    "/HelloGreeting/delete-greeting-by-id": {
+    "/HelloGreeting/DeleteMessage": {
       "delete": {
         "tags": [
           "HelloGreeting"

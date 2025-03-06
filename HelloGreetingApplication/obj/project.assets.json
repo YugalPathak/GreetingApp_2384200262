@@ -931,6 +931,20 @@
           "bin/placeholder/BusinessLayer.dll": {}
         }
       },
+      "Middleware/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "NLog": "5.4.0",
+          "NLog.Web.AspNetCore": "5.4.0"
+        },
+        "compile": {
+          "bin/placeholder/Middleware.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Middleware.dll": {}
+        }
+      },
       "ModelLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2857,6 +2871,11 @@
       "path": "../BusinessLayer/BusinessLayer.csproj",
       "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
     },
+    "Middleware/1.0.0": {
+      "type": "project",
+      "path": "../Middleware/Middleware.csproj",
+      "msbuildProject": "../Middleware/Middleware.csproj"
+    },
     "ModelLayer/1.0.0": {
       "type": "project",
       "path": "../ModelLayer/ModelLayer.csproj",
@@ -2872,8 +2891,10 @@
     "net6.0": [
       "BusinessLayer >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.36",
+      "Middleware >= 1.0.0",
       "MySql.EntityFrameworkCore >= 6.0.33",
       "NLog >= 5.4.0",
+      "NLog.Extensions.Logging >= 5.4.0",
       "NLog.Web.AspNetCore >= 5.4.0",
       "Swashbuckle.AspNetCore >= 7.3.1"
     ]
@@ -2912,6 +2933,9 @@
           "projectReferences": {
             "C:\\Users\\patha\\source\\repos\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj": {
               "projectPath": "C:\\Users\\patha\\source\\repos\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj"
+            },
+            "C:\\Users\\patha\\source\\repos\\HelloGreetingApplication\\Middleware\\Middleware.csproj": {
+              "projectPath": "C:\\Users\\patha\\source\\repos\\HelloGreetingApplication\\Middleware\\Middleware.csproj"
             }
           }
         }
@@ -2943,6 +2967,10 @@
             "version": "[6.0.33, )"
           },
           "NLog": {
+            "target": "Package",
+            "version": "[5.4.0, )"
+          },
+          "NLog.Extensions.Logging": {
             "target": "Package",
             "version": "[5.4.0, )"
           },

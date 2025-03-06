@@ -84,3 +84,5 @@ C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\ob
 C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\obj\Debug\net6.0\HelloGreetingApplication.pdb
 C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\obj\Debug\net6.0\HelloGreetingApplication.genruntimeconfig.cache
 C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\obj\Debug\net6.0\ref\HelloGreetingApplication.dll
+C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\bin\Debug\net6.0\Middleware.dll
+C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\bin\Debug\net6.0\Middleware.pdb

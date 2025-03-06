@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Middleware.GlobalExceptionHandler;
 using ModelLayer.Model;
 using NLog;
 using RepositoryLayer.Entity;
+using Microsoft.Extensions.Logging;
 
 namespace HelloGreetingApplication.Controllers
 {
@@ -19,7 +21,7 @@ namespace HelloGreetingApplication.Controllers
         /// Logs captured by logger instance
         /// </summary>
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
-
+        
         /// <summary>
         /// Constructor to initialize the controller with Greeting Business Logic Layer.
         /// </summary>
@@ -39,18 +41,27 @@ namespace HelloGreetingApplication.Controllers
         [Route("GetPersonalGreet")]
         public IActionResult GetPersonalGreet(string? firstName, string? lastName)
         {
-            logger.Info($"GET request received for greeting with FirstName: {firstName}, LastName: {lastName}");
-
-            string message = _greetingBL.GetGreetMessage(firstName, lastName);
-
-            ResponseModel<string> responseModel = new ResponseModel<string>
+            try
             {
-                Success = true,
-                Message = "Greeted successfully",
-                Data = message
-            };
+                logger.Info($"GET request received for greeting with FirstName: {firstName}, LastName: {lastName}");
 
-            return Ok(responseModel);
+                string message = _greetingBL.GetGreetMessage(firstName, lastName);
+
+                ResponseModel<string> responseModel = new ResponseModel<string>
+                {
+                    Success = true,
+                    Message = "Greeted successfully",
+                    Data = message
+                };
+
+                return Ok(responseModel);
+            }
+            catch (Exception ex)
+            {
+               
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
         }
 
         /// <summary>
@@ -69,7 +80,8 @@ namespace HelloGreetingApplication.Controllers
             }
             catch (Exception ex)
             {
-                logger.Error(ex, "Error saving greeting");
+        
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
                 return StatusCode(500, new { Success = false, Message = "An error occurred" });
             }
         }
@@ -95,7 +107,8 @@ namespace HelloGreetingApplication.Controllers
             }
             catch (Exception ex)
             {
-                logger.Error(ex, "Error retrieving greeting message");
+      
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
                 return StatusCode(500, new { Success = false, Message = "An error occurred" });
             }
         }
@@ -120,7 +133,8 @@ namespace HelloGreetingApplication.Controllers
             }
             catch (Exception ex)
             {
-                logger.Error(ex, "Error retrieving all greetings");
+             
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
                 return StatusCode(500, new { Success = false, Message = "An error occurred" });
             }
         }
@@ -147,7 +161,7 @@ namespace HelloGreetingApplication.Controllers
             }
             catch (Exception ex)
             {
-                logger.Error(ex, "Error");
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
                 return StatusCode(500, new { Success = false, Message = "An error occurred" });
             }
         }
@@ -173,10 +187,12 @@ namespace HelloGreetingApplication.Controllers
             }
             catch (Exception ex)
             {
-                logger.Error(ex, "Error");
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
                 return StatusCode(500, new { Success = false, Message = "An error occurred" });
             }
         }
+
+
 
 
         /// <summary>
@@ -187,13 +203,22 @@ namespace HelloGreetingApplication.Controllers
         [Route("GET")]
         public IActionResult Get()
         {
-            logger.Info("GET request received for greeting.");
+            try
+            {
+                logger.Info("GET request received for greeting.");
 
-            ResponseModel<string> responseModel = new ResponseModel<string>();
-            responseModel.Success = true;
-            responseModel.Message = "Hello to Greeting App API Endpoint";
-            responseModel.Data = "Hello, World!";
-            return Ok(responseModel);
+                ResponseModel<string> responseModel = new ResponseModel<string>();
+                responseModel.Success = true;
+                responseModel.Message = "Hello to Greeting App API Endpoint";
+                responseModel.Data = "Hello, World!";
+                return Ok(responseModel);
+            }
+            catch (Exception ex)
+            {
+            
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
         }
 
         /// <summary>
@@ -205,13 +230,22 @@ namespace HelloGreetingApplication.Controllers
         [Route("POST")]
         public IActionResult Post(RequestModel requestModel)
         {
-            logger.Info($"POST request received with Key: {requestModel.Key}, Value: {requestModel.Value}");
+            try
+            {
+                logger.Info($"POST request received with Key: {requestModel.Key}, Value: {requestModel.Value}");
 
-            ResponseModel<string> responseModel = new ResponseModel<string>();
-            responseModel.Success = true;
-            responseModel.Message = "Request received successfully";
-            responseModel.Data = $"Key: {requestModel.Key}, Value: {requestModel.Value}";
-            return Ok(responseModel);
+                ResponseModel<string> responseModel = new ResponseModel<string>();
+                responseModel.Success = true;
+                responseModel.Message = "Request received successfully";
+                responseModel.Data = $"Key: {requestModel.Key}, Value: {requestModel.Value}";
+                return Ok(responseModel);
+            }
+            catch (Exception ex)
+            {
+             
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
         }
 
         /// <summary>
@@ -223,13 +257,22 @@ namespace HelloGreetingApplication.Controllers
         [Route("PUT")]
         public IActionResult Put(RequestModel requestModel)
         {
-            logger.Info($"PUT request received. Updating greeting to: {requestModel.Value}");
+            try
+            {
+                logger.Info($"PUT request received. Updating greeting to: {requestModel.Value}");
 
-            ResponseModel<string> responseModel = new ResponseModel<string>();
-            responseModel.Success = true;
-            responseModel.Message = "Value updated successfully";
-            responseModel.Data = requestModel.Value;
-            return Ok(responseModel);
+                ResponseModel<string> responseModel = new ResponseModel<string>();
+                responseModel.Success = true;
+                responseModel.Message = "Value updated successfully";
+                responseModel.Data = requestModel.Value;
+                return Ok(responseModel);
+            }
+            catch (Exception ex)
+            {
+              
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
         }
 
         /// <summary>
@@ -241,13 +284,22 @@ namespace HelloGreetingApplication.Controllers
         [Route("PATCH")]
         public IActionResult Patch(RequestModel requestModel)
         {
-            logger.Info($"PATCH request received. Modifying greeting with: {requestModel.Value}");
+            try
+            {
+                logger.Info($"PATCH request received. Modifying greeting with: {requestModel.Value}");
 
-            ResponseModel<string> responseModel = new ResponseModel<string>();
-            responseModel.Success = true;
-            responseModel.Message = "Value updated successfully";
-            responseModel.Data = requestModel.Value;
-            return Ok(responseModel);
+                ResponseModel<string> responseModel = new ResponseModel<string>();
+                responseModel.Success = true;
+                responseModel.Message = "Value updated successfully";
+                responseModel.Data = requestModel.Value;
+                return Ok(responseModel);
+            }
+            catch (Exception ex)
+            {
+              
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
         }
 
         /// <summary>
@@ -259,13 +311,22 @@ namespace HelloGreetingApplication.Controllers
         [Route("DELETE")]
         public IActionResult Delete(RequestModel requestModel)
         {
-            logger.Info($"DELETE request received. Removing greeting for key: {requestModel.Key}");
+            try
+            {
+                logger.Info($"DELETE request received. Removing greeting for key: {requestModel.Key}");
 
-            ResponseModel<string> responseModel = new ResponseModel<string>();
-            responseModel.Success = true;
-            responseModel.Message = "Value deleted successfully";
-            responseModel.Data = string.Empty;
-            return Ok(responseModel);
+                ResponseModel<string> responseModel = new ResponseModel<string>();
+                responseModel.Success = true;
+                responseModel.Message = "Value deleted successfully";
+                responseModel.Data = string.Empty;
+                return Ok(responseModel);
+            }
+            catch (Exception ex)
+            {
+              
+                var errorResponse = ExceptionHandler.CreateErrorResponse(ex, logger);
+                return StatusCode(500, new { Success = false, Message = "An error occurred" });
+            }
 
         }
     }
