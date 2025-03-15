@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Entity;
 using ModelLayer.Model;
 using RepositoryLayer;
 using System.Security.Cryptography;
@@ -8,9 +9,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
+using Org.BouncyCastle.Crypto.Generators;
 using System;
 using RepositoryLayer.Context;
-using RepositoryLayer.Entity;
 
 
 [Route("api/[controller]")]
@@ -19,6 +21,8 @@ public class UserController : ControllerBase
 {
     private readonly HelloGreetingContext _context;
     private readonly JwtHelper _jwtHelper;
+    private readonly EmailService _emailService;
+    private readonly IConfiguration _configuration;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="UserController"/> class.
@@ -26,10 +30,12 @@ public class UserController : ControllerBase
     /// <param name="context">The database context for user-related operations.</param>
     /// <param name="jwtHelper">Helper class for JWT token generation.</param>
 
-    public UserController(HelloGreetingContext context, JwtHelper jwtHelper)
+    public UserController(HelloGreetingContext context, JwtHelper jwtHelper, EmailService emailService, IConfiguration configuration)
     {
         _context = context;
         _jwtHelper = jwtHelper;
+        _emailService = emailService;
+        _configuration = configuration;
     }
 
     /// <summary>
@@ -42,7 +48,7 @@ public class UserController : ControllerBase
     {
         if (model.Username == "admin" && model.Password == "password123") // Replace with actual user authentication logic
         {
-            var token = _jwtHelper.GenerateToken(model.Username);
+            var token = _jwtHelper.GenerateResetToken(model.Username);
             return Ok(new { Token = token });
         }
         return Unauthorized();
@@ -100,43 +106,72 @@ public class UserController : ControllerBase
     }
 
     /// <summary>
-    /// Generates a reset token for password recovery.
+    /// Handles forgot password functionality.
+    /// Generates a password reset token and sends it to the user's email.
     /// </summary>
-    /// <param name="model">The email address of the user requesting a password reset.</param>
-    /// <returns>A reset token if the email exists in the system.</returns>
+    /// <param name="model">Contains the user's email address.</param>
+    /// <returns>Returns a message indicating whether the reset token was sent successfully.</returns>
+
     [HttpPost("forgot-password")]
     public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordModel model)
     {
         var user = await _context.Greetings.FirstOrDefaultAsync(u => u.Email == model.Email);
         if (user == null)
-            return BadRequest("User not found");
+        {
+            return BadRequest("User with this email does not exist.");
+        }
 
-        string resetToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(model.Email));
-        return Ok(new { Message = "Reset token generated", Token = resetToken });
+        var resetToken = _jwtHelper.GenerateResetToken(user.Email);
+
+        var emailBody = $"Your password reset token is: {resetToken}\n\nUse this token in the reset password API.";
+
+        await _emailService.SendEmailAsync(user.Email, "Password Reset Request", emailBody);
+
+        // Return the reset token in the response (useful for testing)
+        return Ok(new { message = "Password reset token sent to your email.", token = resetToken });
     }
 
     /// <summary>
-    /// Resets the user's password using the provided reset token.
+    /// Handles password reset functionality.
+    /// Validates the reset token, updates the user's password, and saves it securely.
     /// </summary>
-    /// <param name="model">The reset token and the new password.</param>
-    /// <returns>A success or failure message.</returns>
+    /// <param name="model">Contains the reset token and the new password.</param>
+    /// <returns>Returns a message indicating whether the password reset was successful.</returns>
     [HttpPost("reset-password")]
     public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordModel model)
     {
-        string email = Encoding.UTF8.GetString(Convert.FromBase64String(model.Token));
-        var user = await _context.Greetings.FirstOrDefaultAsync(u => u.Email == email);
-        if (user == null)
-            return BadRequest("Invalid token");
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
 
-        string salt = GenerateSalt();
-        string hashedPassword = HashPassword(model.NewPassword, salt);
+        try
+        {
+            var principal = tokenHandler.ValidateToken(model.Token, new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidIssuer = _configuration["Jwt:Issuer"],
+                ValidAudience = _configuration["Jwt:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateLifetime = true
+            }, out SecurityToken validatedToken);
 
-        user.PasswordHash = hashedPassword;
-        user.Salt = salt;
-        await _context.SaveChangesAsync();
+            var emailClaim = principal.FindFirst(ClaimTypes.Email);
+            if (emailClaim == null) return Unauthorized("Invalid token.");
 
-        return Ok("Password reset successfully");
+            var user = await _context.Greetings.FirstOrDefaultAsync(u => u.Email == emailClaim.Value);
+            if (user == null) return BadRequest("User not found.");
+
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.NewPassword); // Hash new password
+            await _context.SaveChangesAsync();
+
+            return Ok("Password has been reset successfully.");
+        }
+        catch
+        {
+            return BadRequest("Invalid or expired token.");
+        }
     }
+
 
     /// <summary>
     /// Generates a random cryptographic salt.
