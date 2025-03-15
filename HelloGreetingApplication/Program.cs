@@ -57,6 +57,7 @@ try
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
     builder.Services.AddScoped<IGreetingRL, GreetingRL>();
     builder.Services.AddScoped<JwtHelper>();
+    builder.Services.AddScoped<EmailService>();
     var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
     builder.Services.AddDbContext<HelloGreetingContext>(options =>
     options.UseSqlServer(connectionString));
