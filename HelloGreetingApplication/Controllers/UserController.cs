@@ -1,20 +1,62 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ModelLayer.Model;
-using RepositoryLayer.Context;
-using RepositoryLayer.Entity;
+using RepositoryLayer;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System;
+using RepositoryLayer.Context;
+using RepositoryLayer.Entity;
+
 
 [Route("api/[controller]")]
 [ApiController]
 public class UserController : ControllerBase
 {
     private readonly HelloGreetingContext _context;
+    private readonly JwtHelper _jwtHelper;
 
-    public UserController(HelloGreetingContext context)
+    /// <summary>
+    /// Initializes a new instance of the <see cref="UserController"/> class.
+    /// </summary>
+    /// <param name="context">The database context for user-related operations.</param>
+    /// <param name="jwtHelper">Helper class for JWT token generation.</param>
+
+    public UserController(HelloGreetingContext context, JwtHelper jwtHelper)
     {
         _context = context;
+        _jwtHelper = jwtHelper;
+    }
+
+    /// <summary>
+    /// Authenticates the user and generates a JWT token.
+    /// </summary>
+    /// <param name="model">The login credentials (username & password).</param>
+    /// <returns>Returns a JWT token if authentication is successful; otherwise, returns Unauthorized.</returns>
+    [HttpPost("login/Jwt")]
+    public IActionResult Login([FromBody] LoginModel model)
+    {
+        if (model.Username == "admin" && model.Password == "password123") // Replace with actual user authentication logic
+        {
+            var token = _jwtHelper.GenerateToken(model.Username);
+            return Ok(new { Token = token });
+        }
+        return Unauthorized();
+    }
+
+    /// <summary>
+    /// Retrieves protected data. This endpoint is accessible only to authenticated users.
+    /// </summary>
+    /// <returns>Returns a success message if the user is authorized.</returns>
+    [Authorize]
+    [HttpGet("secure-data")]
+    public IActionResult SecureData()
+    {
+        return Ok("You are authenticated! This is protected data.");
     }
 
     /// <summary>

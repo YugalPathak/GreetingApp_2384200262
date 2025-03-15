@@ -831,3 +831,35 @@ SELECT ROW_COUNT();
 2025-03-15 16:19:29.8126 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/favicon-32x32.png - - - 200 628 image/png 1.7392ms
 2025-03-15 16:32:45.1642 ERROR An Error Occured.
 2025-03-15 16:33:38.2058 ERROR An Error Occured.
+2025-03-15 17:51:26.6314 INFO User profile is available. Using 'C:\Users\patha\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-15 17:51:26.7456 INFO Creating key {e13c65b4-3df1-4e12-b093-089ecf495127} with creation date 2025-03-15 12:21:26Z, activation date 2025-03-15 12:21:26Z, and expiration date 2025-06-13 12:21:26Z.
+2025-03-15 17:51:26.7843 INFO Writing data to file 'C:\Users\patha\AppData\Local\ASP.NET\DataProtection-Keys\key-e13c65b4-3df1-4e12-b093-089ecf495127.xml'.
+2025-03-15 17:51:27.4286 INFO Now listening on: https://localhost:7264
+2025-03-15 17:51:27.4286 INFO Now listening on: http://localhost:5147
+2025-03-15 17:51:27.7859 INFO Application started. Press Ctrl+C to shut down.
+2025-03-15 17:51:27.7859 INFO Hosting environment: Development
+2025-03-15 17:51:27.7859 INFO Content root path: C:\Users\patha\source\repos\HelloGreetingApplication\HelloGreetingApplication\
+2025-03-15 17:51:28.7478 INFO Request starting HTTP/2 GET https://localhost:7264/swagger - -
+2025-03-15 17:51:29.2123 INFO Request finished HTTP/2 GET https://localhost:7264/swagger - - - 301 0 - 470.9938ms
+2025-03-15 17:51:29.2123 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.html - -
+2025-03-15 17:51:29.5150 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.html - - - 200 - text/html;charset=utf-8 299.9342ms
+2025-03-15 17:51:29.5329 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - -
+2025-03-15 17:51:29.5499 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.css - -
+2025-03-15 17:51:29.5499 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - -
+2025-03-15 17:51:29.5526 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/index.js - -
+2025-03-15 17:51:29.5526 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - -
+2025-03-15 17:51:29.5526 INFO Request starting HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - -
+2025-03-15 17:51:29.5526 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.js - - - 200 - application/javascript;charset=utf-8 1.9992ms
+2025-03-15 17:51:29.5526 INFO Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-15 17:51:29.6818 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/index.css - - - 200 202 text/css 131.7134ms
+2025-03-15 17:51:29.6818 INFO Request finished HTTP/2 GET https://localhost:7264/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 133.1252ms
+2025-03-15 17:51:29.6975 INFO Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-15 17:51:29.6975 INFO Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-15 17:51:29.6975 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui.css - - - 200 154948 text/css 171.2541ms
+2025-03-15 17:51:29.6975 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 151.5446ms
+2025-03-15 17:51:29.6975 INFO Request starting HTTP/2 GET https://localhost:7264/_vs/browserLink - -
+2025-03-15 17:51:29.7440 INFO Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-15 17:51:29.7440 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 194.2471ms
+2025-03-15 17:51:29.9582 INFO Request finished HTTP/2 GET https://localhost:7264/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 251.3302ms
+2025-03-15 17:51:30.0944 INFO Request starting HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - -
+2025-03-15 17:51:30.1056 INFO Request finished HTTP/2 GET https://localhost:7264/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 11.2805ms

@@ -33,6 +33,22 @@
   },
   {
     "ContainingType": "UserController",
+    "Method": "Login",
+    "RelativePath": "api/User/login/Jwt",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "ModelLayer.Model.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserController",
     "Method": "Register",
     "RelativePath": "api/User/register",
     "HttpMethod": "POST",
@@ -61,6 +77,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "SecureData",
+    "RelativePath": "api/User/secure-data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
