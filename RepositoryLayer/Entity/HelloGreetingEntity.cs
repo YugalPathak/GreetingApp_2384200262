@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace RepositoryLayer.Entity
 {
+    /// <summary>
+    /// Represents a user entity stored in the database.
+    /// </summary>
     public class HelloGreetingEntity
     {
-        [Key]
         public int id { get; set; }
-        [Required]
-        public string message { get; set; }
+        public string Email { get; set; }
+        public string PasswordHash { get; set; }
+        public string Salt { get; set; }
+        public string? message { get; set; }  // Nullable so it's optional
     }
 }

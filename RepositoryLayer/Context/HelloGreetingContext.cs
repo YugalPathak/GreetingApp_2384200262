@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace RepositoryLayer.Context
     public class HelloGreetingContext : DbContext
     {
         public HelloGreetingContext(DbContextOptions<HelloGreetingContext> options) : base(options)  { }
-        public DbSet<Entity.HelloGreetingEntity> Greetings { get; set; }
+        public DbSet<HelloGreetingEntity> Greetings { get; set; }
 
     }
 }
