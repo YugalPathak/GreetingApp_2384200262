@@ -1,18 +1,16 @@
 ﻿using RepositoryLayer.Entity;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace RepositoryLayer.Interface
 {
     public interface IGreetingRL
     {
-        void SaveGreeting(HelloGreetingEntity helloGreetingEntity);
-        HelloGreetingEntity GetMessageById(int id);
-        List<HelloGreetingEntity> GetMessages();
-        bool UpdateMessage(int id, string updatedMessage);
-        bool DeleteMessage(int id);
+        Task<GreetingEntity> CreateGreeting(GreetingEntity greeting);
+        Task<List<GreetingEntity>> GetGreetingsByUserId(int userId);
+        Task<List<GreetingEntity>> GetAllGreetings();
+        Task<bool> UpdateGreeting(int id, string newMessage);
+        Task<bool> DeleteGreeting(int id);
+        Task<bool> SaveGreeting(int userId, string message);
     }
 }

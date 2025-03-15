@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RepositoryLayer.Entity;
 using ModelLayer.Model;
 using RepositoryLayer;
 using System.Security.Cryptography;
@@ -11,8 +10,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using Org.BouncyCastle.Crypto.Generators;
+using RepositoryLayer.Entity;
 using System;
-using RepositoryLayer.Context;
 
 
 [Route("api/[controller]")]
@@ -71,16 +70,16 @@ public class UserController : ControllerBase
     /// <param name="user">The user details including email and password.</param>
     /// <returns>A success or failure message.</returns>
     [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody] UserModel user)
+    public async Task<IActionResult> Register([FromBody] HelloGreetingEntity user)
     {
-        if (await _context.Greetings.AnyAsync(u => u.Email == user.Email))
+        if (await _context.Users.AnyAsync(u => u.Email == user.Email))
             return BadRequest("User already exists");
 
         string salt = GenerateSalt();
         string hashedPassword = HashPassword(user.Password, salt);
 
-        var newUser = new HelloGreetingEntity { Email = user.Email, PasswordHash = hashedPassword, Salt = salt };
-        _context.Greetings.Add(newUser);
+        var newUser = new HelloGreetingEntity { Email = user.Email, Password = hashedPassword, Salt = salt };
+        _context.Users.Add(newUser);
         await _context.SaveChangesAsync();
 
         return Ok("User registered successfully");
@@ -94,12 +93,12 @@ public class UserController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] UserModel user)
     {
-        var existingUser = await _context.Greetings.FirstOrDefaultAsync(u => u.Email == user.Email);
+        var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
         if (existingUser == null)
             return Unauthorized("User not found");
 
         string hashedPassword = HashPassword(user.Password, existingUser.Salt);
-        if (existingUser.PasswordHash != hashedPassword)
+        if (existingUser.Password != hashedPassword)
             return Unauthorized("Invalid credentials");
 
         return Ok("Login successful");
@@ -115,7 +114,7 @@ public class UserController : ControllerBase
     [HttpPost("forgot-password")]
     public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordModel model)
     {
-        var user = await _context.Greetings.FirstOrDefaultAsync(u => u.Email == model.Email);
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
         if (user == null)
         {
             return BadRequest("User with this email does not exist.");
@@ -158,10 +157,10 @@ public class UserController : ControllerBase
             var emailClaim = principal.FindFirst(ClaimTypes.Email);
             if (emailClaim == null) return Unauthorized("Invalid token.");
 
-            var user = await _context.Greetings.FirstOrDefaultAsync(u => u.Email == emailClaim.Value);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == emailClaim.Value);
             if (user == null) return BadRequest("User not found.");
 
-            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.NewPassword); // Hash new password
+            user.Password = BCrypt.Net.BCrypt.HashPassword(model.NewPassword); // Hash new password
             await _context.SaveChangesAsync();
 
             return Ok("Password has been reset successfully.");

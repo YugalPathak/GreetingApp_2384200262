@@ -1,5 +1,6 @@
 ﻿using RepositoryLayer.Entity;
-using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.Interface
 {
@@ -9,16 +10,12 @@ namespace BusinessLayer.Interface
     /// </summary>
     public interface IGreetingBL
     {
-        /// <summary>
-        /// Get a greeting message.
-        /// </summary>
-        /// <returns>A greeting message string.</returns>
-        string GetGreetMessage(string? firstName , string? lastName);
-        void SaveGreeting(string message);
-        HelloGreetingEntity GetMessageById(int id);
-
-        List<HelloGreetingEntity> GetMessages();
-        bool UpdateMessage(int id, string updatedMessage);
-        bool DeleteMessage(int id);
+        string GetGreeting(string? firstName = null, string? lastName = null);
+        Task<GreetingEntity> CreateGreeting(string message, int userId);
+        Task<List<GreetingEntity>> GetGreetingsByUserId(int userId);
+        Task<List<GreetingEntity>> GetAllGreetings();
+        Task<bool> UpdateGreeting(int id, string newMessage);
+        Task<bool> DeleteGreeting(int id);
+        Task<bool> SaveGreeting(int userId, string message);
     }
 }

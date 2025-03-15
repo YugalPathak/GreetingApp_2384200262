@@ -1,17 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RepositoryLayer.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RepositoryLayer.Entity;  // Ensure the correct namespace is used
 
-namespace RepositoryLayer.Context
+public class HelloGreetingContext : DbContext
 {
-    public class HelloGreetingContext : DbContext
-    {
-        public HelloGreetingContext(DbContextOptions<HelloGreetingContext> options) : base(options)  { }
-        public DbSet<HelloGreetingEntity> Greetings { get; set; }
+    public HelloGreetingContext(DbContextOptions<HelloGreetingContext> options) : base(options) { }
 
+    public DbSet<HelloGreetingEntity> Users { get; set; }
+    public DbSet<GreetingEntity> Greetings { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder) // Ensure correct signature
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<GreetingEntity>()
+            .HasOne(g => g.User)
+            .WithMany(u => u.Greetings)
+            .HasForeignKey(g => g.id)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

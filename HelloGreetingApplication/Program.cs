@@ -10,8 +10,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using BusinessLayer.Interface;
-using System;
-using RepositoryLayer.Context;
 
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -58,9 +56,9 @@ try
     builder.Services.AddScoped<IGreetingRL, GreetingRL>();
     builder.Services.AddScoped<JwtHelper>();
     builder.Services.AddScoped<EmailService>();
-    var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
+    var connectionString = builder.Configuration.GetConnectionString("MySqlConnection");
     builder.Services.AddDbContext<HelloGreetingContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();

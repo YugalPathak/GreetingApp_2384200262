@@ -5,7 +5,133 @@
     "version": "1.0"
   },
   "paths": {
-    "/HelloGreeting/GetPersonalGreet": {
+    "/api/HelloGreeting/Save": {
+      "post": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GreetingEntity"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GreetingEntity"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GreetingEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HelloGreeting/GetById": {
+      "get": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HelloGreeting/GetAll": {
+      "get": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HelloGreeting/UpdateById": {
+      "put": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "newMessage",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HelloGreeting/DeleteById": {
+      "delete": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HelloGreeting/PersonalGreet": {
       "get": {
         "tags": [
           "HelloGreeting"
@@ -33,60 +159,7 @@
         }
       }
     },
-    "/HelloGreeting/SAVE": {
-      "post": {
-        "tags": [
-          "HelloGreeting"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/HelloGreetingEntity"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/HelloGreetingEntity"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/HelloGreetingEntity"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/HelloGreeting/GetID": {
-      "get": {
-        "tags": [
-          "HelloGreeting"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/HelloGreeting/GetMessages": {
+    "/api/HelloGreeting/Default": {
       "get": {
         "tags": [
           "HelloGreeting"
@@ -98,70 +171,7 @@
         }
       }
     },
-    "/HelloGreeting/Change": {
-      "put": {
-        "tags": [
-          "HelloGreeting"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "updatedMessage",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/HelloGreeting/DeleteMessage": {
-      "delete": {
-        "tags": [
-          "HelloGreeting"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/HelloGreeting/GET": {
-      "get": {
-        "tags": [
-          "HelloGreeting"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/HelloGreeting/POST": {
+    "/api/HelloGreeting/Processing": {
       "post": {
         "tags": [
           "HelloGreeting"
@@ -192,38 +202,7 @@
         }
       }
     },
-    "/HelloGreeting/PUT": {
-      "put": {
-        "tags": [
-          "HelloGreeting"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/HelloGreeting/PATCH": {
+    "/api/HelloGreeting/Update": {
       "patch": {
         "tags": [
           "HelloGreeting"
@@ -254,7 +233,7 @@
         }
       }
     },
-    "/HelloGreeting/DELETE": {
+    "/api/HelloGreeting/Delete": {
       "delete": {
         "tags": [
           "HelloGreeting"
@@ -337,17 +316,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserModel"
+                "$ref": "#/components/schemas/HelloGreetingEntity"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserModel"
+                "$ref": "#/components/schemas/HelloGreetingEntity"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserModel"
+                "$ref": "#/components/schemas/HelloGreetingEntity"
               }
             }
           }
@@ -465,23 +444,69 @@
         },
         "additionalProperties": false
       },
-      "HelloGreetingEntity": {
+      "GreetingEntity": {
+        "required": [
+          "message"
+        ],
         "type": "object",
         "properties": {
+          "greetingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "minLength": 1,
+            "type": "string"
+          },
           "id": {
             "type": "integer",
             "format": "int32"
           },
-          "email": {
-            "type": "string",
-            "nullable": true
+          "user": {
+            "$ref": "#/components/schemas/HelloGreetingEntity"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HelloGreetingEntity": {
+        "required": [
+          "email",
+          "firstName",
+          "lastName",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
           },
-          "passwordHash": {
-            "type": "string",
-            "nullable": true
+          "firstName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "lastName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
           },
           "salt": {
             "type": "string",
+            "nullable": true
+          },
+          "greetings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GreetingEntity"
+            },
             "nullable": true
           },
           "message": {

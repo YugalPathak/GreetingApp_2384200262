@@ -17,56 +17,60 @@ namespace BusinessLayer.Service
             _greetingRL = greetingRL;
         }
 
-         /// <summary>
-        /// Returns a greeting message string.
-        /// </summary>
-        /// <returns>String containing "Hello, World!".</returns>
-        public string GetGreetMessage(string? firstName, string? lastName)
+        public async Task<bool> SaveGreeting(int userId, string message)
         {
-            if(firstName!=null && lastName!=null)
+            if (string.IsNullOrWhiteSpace(message))
+                throw new ArgumentException("Message cannot be empty");
+
+            return await _greetingRL.SaveGreeting(userId, message); // Pass userId and message to repository layer
+        }
+
+        public async Task<GreetingEntity> CreateGreeting(string message, int userId)
+        {
+            var greeting = new GreetingEntity
             {
-                return $"{firstName}  {lastName}";
-            }
-            else if(firstName!=null)
+                message = message,
+                id = userId
+            };
+
+            return await _greetingRL.CreateGreeting(greeting);
+        }
+
+        public async Task<List<GreetingEntity>> GetGreetingsByUserId(int userId)
+        {
+            return await _greetingRL.GetGreetingsByUserId(userId);
+        }
+
+        public async Task<List<GreetingEntity>> GetAllGreetings()
+        {
+            return await _greetingRL.GetAllGreetings();
+        }
+
+        public async Task<bool> UpdateGreeting(int id, string newMessage)
+        {
+            return await _greetingRL.UpdateGreeting(id, newMessage);
+        }
+
+        public async Task<bool> DeleteGreeting(int id)
+        {
+            return await _greetingRL.DeleteGreeting(id);
+        }
+
+        public string GetGreeting(string? firstName = null, string? lastName = null)
+        {
+            if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
             {
-                return $"{firstName}";
-
+                return $"Hello, {firstName} {lastName}!";
             }
-            else if (lastName != null)
+            if (!string.IsNullOrEmpty(firstName))
             {
-                return $"{lastName}";
-
+                return $"Hello, {firstName}!";
             }
-            else
+            if (!string.IsNullOrEmpty(lastName))
             {
-                return "Hello, World!";
+                return $"Hello, {lastName}!";
             }
-        }
-
-        public void SaveGreeting(string message)
-        {
-            var greeting = new HelloGreetingEntity { message = message };
-            _greetingRL.SaveGreeting(greeting);
-        }
-
-        public HelloGreetingEntity GetMessageById(int id)
-        {
-            return _greetingRL.GetMessageById(id);
-        }
-
-        public List<HelloGreetingEntity> GetMessages()
-        {
-            return _greetingRL.GetMessages();
-        }
-
-        public bool UpdateMessage(int id, string updatedMessage)
-        {
-            return _greetingRL.UpdateMessage(id, updatedMessage);
-        }
-
-        public bool DeleteMessage(int id)
-        {
-            return _greetingRL.DeleteMessage(id);
+            return "Hello World!";
         }
     }
 }

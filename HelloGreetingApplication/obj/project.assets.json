@@ -1485,6 +1485,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.36",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.36",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.36",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.3"
         },
         "compile": {
@@ -4276,6 +4277,7 @@
       "BusinessLayer >= 1.0.0",
       "MailKit >= 4.11.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.36",
+      "Microsoft.EntityFrameworkCore >= 6.0.36",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.36",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.36",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.36",
@@ -4284,6 +4286,7 @@
       "NLog >= 5.4.0",
       "NLog.Extensions.Logging >= 5.4.0",
       "NLog.Web.AspNetCore >= 5.4.0",
+      "Pomelo.EntityFrameworkCore.MySql >= 6.0.3",
       "Swashbuckle.AspNetCore >= 7.3.1",
       "System.IdentityModel.Tokens.Jwt >= 8.6.1"
     ]
@@ -4357,6 +4360,10 @@
             "target": "Package",
             "version": "[6.0.36, )"
           },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.36, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -4388,6 +4395,10 @@
           "NLog.Web.AspNetCore": {
             "target": "Package",
             "version": "[5.4.0, )"
+          },
+          "Pomelo.EntityFrameworkCore.MySql": {
+            "target": "Package",
+            "version": "[6.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
