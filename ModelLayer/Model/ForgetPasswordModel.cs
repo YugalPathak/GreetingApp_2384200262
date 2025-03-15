@@ -11,6 +11,7 @@ namespace ModelLayer.Model
     /// </summary>
     public class ForgotPasswordModel
     {
-        public string Email { get; set; }
+        //public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
     }
 }

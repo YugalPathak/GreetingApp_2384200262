@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interface;
+using HelloGreetingApp.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Middleware.GlobalExceptionHandler;
 using ModelLayer.Model;
@@ -16,14 +17,16 @@ namespace HelloGreetingApplication.Controllers
     {
         private readonly IGreetingBL _greetingBL;
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        private readonly RedisCacheHelper _redisCache;
 
         /// <summary>
         /// Constructor to initialize the controller with Greeting Business Logic Layer.
         /// </summary>
         /// <param name="greetingBL">Instance of IGreetingBL for handling greetings.</param>
-        public HelloGreetingController(IGreetingBL greetingBL)
+        public HelloGreetingController(IGreetingBL greetingBL, RedisCacheHelper redisCache)
         {
             _greetingBL = greetingBL;
+            _redisCache = redisCache;
         }
 
         [HttpPost("Save")]
@@ -49,25 +52,25 @@ namespace HelloGreetingApplication.Controllers
 
 
 
-        /// <summary>
-        /// Retrieve a greeting by ID.
-        /// </summary>
-        [HttpGet("GetById")]
-        public IActionResult GetGreetingById(int id)
+        [HttpGet("GetGreetingById")]
+        public async Task<IActionResult> GetGreeting(int id)
         {
-            try
-            {
-                var greeting = _greetingBL.GetGreetingsByUserId(id);
-                if (greeting == null)
-                    return NotFound(new { Success = false, Message = "Greeting not found" });
+            string cacheKey = $"greeting_{id}";
 
-                return Ok(new { Success = true, Message = "Greeting retrieved successfully", Data = greeting });
-            }
-            catch (Exception ex)
+            // Check if data is in cache
+            var cachedGreeting = await _redisCache.GetCacheAsync<string>(cacheKey);
+            if (cachedGreeting != null)
             {
-                logger.Error(ex, $"Error retrieving greeting for ID: {id}");
-                return StatusCode(500, ExceptionHandler.CreateErrorResponse(ex, logger));
+                return Ok(new { message = "Data from cache", greeting = cachedGreeting });
             }
+
+            // If not in cache, fetch from database (mock data here)
+            string greetingMessage = $"Hello, user {id}!";
+
+            // Store data in Redis cache
+            await _redisCache.SetCacheAsync(cacheKey, greetingMessage);
+
+            return Ok(new { message = "Data from database", greeting = greetingMessage });
         }
 
         /// <summary>

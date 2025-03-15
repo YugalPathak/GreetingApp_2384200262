@@ -1,8 +1,13 @@
-﻿using BusinessLayer.Interface;
-using RepositoryLayer.Entity;
+﻿using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
-using System;
-
+using BusinessLayer.Interface;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using RabbitMQ.Client;
+using System.Text;
+using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage;
 namespace BusinessLayer.Service
 {
     /// <summary>
@@ -16,7 +21,6 @@ namespace BusinessLayer.Service
         {
             _greetingRL = greetingRL;
         }
-
         public async Task<bool> SaveGreeting(int userId, string message)
         {
             if (string.IsNullOrWhiteSpace(message))

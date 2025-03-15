@@ -5,16 +5,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
+using Newtonsoft.Json;
 
 namespace RepositoryLayer.Service
 {
     public class GreetingRL : IGreetingRL
     {
+
         private readonly HelloGreetingContext _context;
 
         public GreetingRL(HelloGreetingContext context)
         {
             _context = context;
+
         }
 
         public async Task<bool> SaveGreeting(int userId, string message)

@@ -10,6 +10,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using BusinessLayer.Interface;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using StackExchange.Redis;
+using RabbitMQ.Client;
+using HelloGreetingApp.Helpers;
 
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -18,6 +24,20 @@ try
     logger.Info("Application is starting...");
 
     var builder = WebApplication.CreateBuilder(args);
+
+    // Ensure that appsettings.json is loaded
+    builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+    var redisConfig = builder.Configuration.GetSection("Redis");
+    if (redisConfig == null || string.IsNullOrEmpty(redisConfig["ConnectionString"]))
+    {
+        throw new ArgumentNullException("Redis ConnectionString is missing in appsettings.json");
+    }
+
+    builder.Services.AddSingleton(new RedisCacheHelper(
+        redisConfig["ConnectionString"],
+        int.Parse(redisConfig["CacheTimeout"] ?? "60")  // Default timeout 60 seconds
+    ));
 
     // Add JWT authentication services
     var jwtSettings = builder.Configuration.GetSection("Jwt");
@@ -56,6 +76,9 @@ try
     builder.Services.AddScoped<IGreetingRL, GreetingRL>();
     builder.Services.AddScoped<JwtHelper>();
     builder.Services.AddScoped<EmailService>();
+    // Add RabbitMQ services
+    builder.Services.AddSingleton<RabbitMQProducer>();
+    builder.Services.AddSingleton<RabbitMQConsumer>();
     var connectionString = builder.Configuration.GetConnectionString("MySqlConnection");
     builder.Services.AddDbContext<HelloGreetingContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
@@ -66,6 +89,9 @@ try
 
     var app = builder.Build();
 
+    // Start RabbitMQ Consumer in Background
+    Task.Run(() => app.Services.GetRequiredService<RabbitMQConsumer>().StartListening());
+
 
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -75,6 +101,7 @@ try
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
+    app.UseRouting();
     app.MapControllers();
 
     app.Run();
